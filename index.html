@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="templateStyle.css">
+    <link rel="stylesheet" href="responsiveStyle.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.12/cropper.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="input-container">
+            <div class="heading">
+                <h1>Resume Builder</h1>
+                <h4>By Sattik Bhowmick</h4>
+            </div>
+            <div class="info">
+                <form class="info-form">
+                    <div class="section">
+                        <h3>PERSONAL INFORMATION</h3>
+                        <div class="field">
+                            <b><p>NAME *</p></b>
+                            <input type="text" class="inp" id="firstname" name="firstname" placeholder="First Name">
+                            <input type="text" class="inp" id="lastname" name="lastname" placeholder="Last Name">
+                        </div>
+                        <div class="field">
+                            <b><p>ADDRESS *</p></b>
+                            <input type="text" class="inp" id="address" name="address" placeholder="Address">
+                        </div>
+                        <div class="field">
+                            <b><p>PHONE *</p></b>
+                            <input type="text" class="inp" id="phone" name="phone" placeholder="Phone">
+                        </div>
+                        <div class="field">
+                            <b><p>EMAIL ID *</p></b>
+                            <input type="text" class="inp" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="field">
+                            <b><p>YOUR PHOTO</p></b>
+                            <div class="image-crop-container">
+                                <input type="file" id="imgField" accept="image/*" >
+                                <img id="imagePreview" style="display:none; max-width: 100%; height: auto;">
+                                <button id="cropButton" style="display:none;" >Crop Image</button>
+                            </div>
+                        </div>                        
+                        <div class="field lan">
+                            <b><p>LANGUAGES</p></b>
+                            <input type="text" class="inp added lan-input" id="language" name="language" placeholder="Enter language">
+                            <div class="addsectiondiv lanAdd">
+                                <input type="button" class="addsection lanBtn" value="+">
+                            </div>
+                        </div>   
+                    </div>
+                    <div class="section">
+                        <h3>IMPORTANT LINKS</h3>
+                        <div class="field link">
+                            <input type="text" class="inp added link-input" id="github" name="github" placeholder="GitHub">
+                            <input type="text" class="inp added link-input" id="linkedin" name="linkedin" placeholder="LinkedIn"> 
+                            <div class="addsectiondiv linkAdd">
+                                <input type="button" class="addsection linkBtn" value="+">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section edu">
+                        <h3>EDUCATION</h3>
+                        <div class="edu-field">
+                            <div class="field">
+                                <b><p>INSTITUTE NAME</p></b>
+                                <input type="text" class="inp" id="institute" name="institute" placeholder="Enter Institute Name">
+                            </div>
+                            <div class="field">
+                                <b><p>DEGREE</p></b>
+                                <input type="text" class="inp" id="degree" name="degree" placeholder="Enter Degree">
+                            </div>
+                            <div class="field">
+                                <b><p>FIELD OF STUDY</p></b>
+                                <input type="text" class="inp" id="fieldofstudy" name="filedofstudy" placeholder="Enter field of study">
+                            </div>
+                            <div class="field">
+                                <b><p>CGPA (OR PERCENTAGE)</p></b>
+                                <input type="text" class="inp" id="marks" name="marks" placeholder="Enter here">
+                            </div>
+                            <div class="field">
+                                <b><p>GRADUATION DATE (OR EXPECTED GRADUATION DATE)</p></b>
+                                <input type="text" class="inp" id="grad-date" name="grad-date" placeholder="Enter Month and Year">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section prof">
+                        <h3>PROFESSIONAL INFORMATION</h3>
+                        <div class="field obj">
+                            <b><p>OBJECTIVE</p></b>
+                            <textarea name="about" id="objective" placeholder="Describe here"></textarea>
+                        </div>
+                        <div class="field exper">
+                            <b><p>EXPERIENCE</p></b>
+                            <textarea name="experience" id="experience" class="added expr" placeholder="Describe here"></textarea>
+                            <div class="addsectiondiv addExp">
+                                <input type="button" class="addsection expBtn" value="+">
+                            </div>
+                        </div>
+                        <div class="field skills">
+                            <b><p>SKILLS</p></b>
+                            <input type="text" class="inp added skill-input" id="skill" name="skill" placeholder="Enter skill">
+                            <div class="addsectiondiv addSkill">
+                                <input type="button" id="skillBtn" class="addsection skillBtn" value="+">
+                            </div>
+                        </div>
+                    </div>
+                </form>       
+            </div>
+        </div>
+        <div class="generate">
+            <button class="generateBtn">Generate</button>
+        </div>
+    <!-- Resume template selector -->
+    <div class="tempSelector">
+        <div class="temp" id="temp1">
+            <img class="tempPic" id="tempPic1" src="template1.png" alt="" value="1">
+        </div>
+        <div class="temp" id="temp2">
+            <img class="tempPic" id="tempPic2" src="template2.png" alt="" value="2">
+        </div>
+        <div class="temp" id="temp3">
+            <img class="tempPic" id="tempPic3" src="template3.png" alt="" value="3">
+        </div>
+    </div>
+
+    <!-- Start CV -->
+    <div class="resume" id="resume-template1">
+        <div class="container-resume">
+            <!-- left side -->
+            <div class="left">
+                <div class="text">
+                    <div class="pic">
+                      <img id="imgTemplate" src="" alt="" class="userImg">
+                    </div>
+                    <h2 id="Name"></h2>
+                </div>
+                <div class="Info">
+                    <h2 class="title">Contact Info</h2>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                            <span id="Contact">Phone</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <span id="Email">Email</span>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                            <span id="Addr">Address</span>
+                        </li>
+                        <ul id="Links">
+                            <li><span id="Github">GitHub</span></li>
+                            <li><span id="Linkedin">LinkedIn</span></li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="Edu">
+                    <h2 class="title">Education</h2>
+                    <div id="Edu"></div>
+                </div>
+                <div class="Lang">
+                    <h2 class="title">Languages</h2>
+                    <ul id="Lan"></ul>
+                </div>
+            </div>
+            <!-- Right side -->
+            <div class="right">
+                <div class="Objective">
+                    <h2 id="head1">About</h2>
+                    <p id="Objective"></p>
+                </div>
+                <div class="Exp">
+                    <h2 id="head2">Experience</h2>
+                    <ul id="Exp"></ul>
+                </div>
+                <div class="Skills">
+                    <h2 id="head3">Skills</h2>
+                    <ul id="Skills"></ul>
+                </div>
+            </div>
+        </div>
+        <div id="btnN" class="printBtn">
+            <button class="btn printResume">Print Resume</button>
+        </div>
+        <div id="btnE" class="editBtn">
+            <button class="btn editResume">Edit Resume</button>
+        </div>
+    </div>
+
+    
+    
+    </div>
+    <script src="script.js"></script>
+    <script src="tempScript.js"></script>
+</body>
+</html>

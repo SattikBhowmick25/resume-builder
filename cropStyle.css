@@ -1,0 +1,22 @@
+.image-crop-container {
+    margin-top: 10px;
+}
+
+#imagePreview {
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#cropButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#cropButton:hover {
+    background-color: #45a049;
+}

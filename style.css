@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body {
+    background-image: url("bg2.jpg");
+    background-color: #f0f0f0;  /* Fallback background */
+}
+
+.input-container{
+    position: relative;
+    margin: auto;
+    top: 10px;
+    width: 1000px;
+    background-color: rgba(255, 255, 255, 0.658);
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.281);
+    margin-bottom: 50px;
+}
+.input-container .heading{
+    background-color: rgb(241, 221, 195);
+    color: rgb(85, 54, 13);
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+.input-container .heading h4{
+    position: relative;
+    top: -10px;
+    color: rgb(156, 105, 37);
+}
+.section{
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.185);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 20px;
+}
+.section h3{
+    background-color: rgb(241, 221, 195);
+    padding-top: 5px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    border-radius: 5px;
+    color: rgb(85, 54, 13);
+}
+.field{
+    margin: 15px;
+    margin-left: 20px;
+}
+.inp{
+    border-radius: 5px;
+    border: 2px solid rgb(241, 221, 195);
+    padding: 5px;
+    width: 300px;
+    margin: 2px;
+}
+.inp:focus{
+    outline: 4px solid rgb(241, 221, 195);
+}
+.added{
+    display: block;
+    margin: 10px 0;
+}
+.addsectiondiv{
+    padding: 5px;
+    width: 300px;
+    margin: 2px;
+    display: flex;
+    justify-content: right;
+}
+input[type="file"]::file-selector-button {
+    background-color: rgb(241, 221, 195);
+    color: rgb(85, 54, 13);
+    padding: 5px 10px;
+    border: 2px solid rgb(163, 130, 87);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addsection{
+    width: 50px;
+    font-size: 18px;
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+}
+.addsection:hover{
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
+textarea{
+    width: 600px;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    border:2px solid rgb(241, 221, 195);
+    border-radius: 5px;
+}
+textarea:focus{
+    outline: 4px solid rgb(241, 221, 195);
+}
+.addExp{
+    width: 600px;
+}
+.generate{
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.generateBtn{
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+    padding: 5px 20px;
+    font-size: 18px;
+}
+.generateBtn:hover{
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
+.edu-field{
+    border-radius: 10px;
+    border:2px solid rgb(241, 221, 195);
+    margin: 10px 0;
+}
+.addEd{
+    width: 100%;
+}
+
+/* Cropping image styling */
+.image-crop-container {
+    margin-top: 10px;
+}
+
+#imagePreview {
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid #ddd;
+    margin: 30px;
+    border-radius: 25px;
+}
+
+#cropButton {
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+    padding: 5px 20px;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#cropButton:hover {
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
+
+/* Resume */
+.resume .container-resume{
+    max-width: 100vh;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.281);
+    margin: 0px auto;
+    padding: 0;
+    overflow: hidden;
+}
+.left{
+    color: white;
+    position: relative;
+    /* background-color: #8d591a; */
+    padding: 20px;
+    width: 60%;
+    position: relative;
+    left: 0px;
+    overflow: hidden;
+}
+#Email{
+    font-size: 0.8em;
+    position: relative;
+    left: 0;
+}
+.text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-direction: column;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(255, 255, 255, .2);
+}
+.pic {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    overflow: hidden;
+    object-fit: cover;
+}
+.text h2 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+.text span {
+    font-size: 1em;
+    font-weight: 300;
+    color: #fff;
+}
+.text .pic img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+}
+ul{
+    position: relative;
+}
+.icon {
+    display: inline-block;
+    width: 20px;
+    font-size: 1em;
+    color: #ffffff;
+  }
+  .icon{
+    font-weight: 400;
+  }
+  /* .left ul li span {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1em;
+  } */
+  #Links{
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  #Links li span{
+    color: #e2cb8d;
+  }
+  .title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .left li {
+    margin-bottom: 5px;
+    list-style: none;
+    color: #ffffff;
+  }
+  .Edu p {
+    color: #fff;
+    font-size: 1em;
+    line-height: 1em;
+  }
+  .Lang {
+    margin-top: 20px;
+  }
+  .lang li {
+    list-style: square;
+    color: #ffffff;
+    padding: 10px;
+  }
+  .left .Lang li span {
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  /* Objective */
+  .right {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    width: 100%;
+  }
+  .right .Objective h2 {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: 750;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+  }
+  .right .Objective p {
+    color: #333;
+    line-height: 1.2em;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 12px;
+    letter-spacing: 1px;
+  }
+  .right .Exp h2 {
+    margin-top: 30px;
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 750;
+    letter-spacing: 1px;
+  }
+  .right .Exp #Exp{
+    color: #333;
+    line-height: 1em;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 12px;
+    letter-spacing: 1px;
+    text-align: justify;
+    list-style:none;
+  }
+  .Skills h2 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 750;
+    letter-spacing: 1px;
+    margin-top: 30px;
+  }
+  .right .Skills #Skills{
+    color: #333;
+    line-height: 1.5em;
+    font-size: 0.9em;
+    margin: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-align: justify;
+    list-style:none;
+  }
+
+
+
+.inp:hover, textarea:hover {
+    border-color: rgb(163, 130, 87);
+}
+.generateBtn:hover {
+    background-color: rgb(141, 89, 26);
+    color: white;
+}
+.printBtn{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.printResume{
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+    padding: 5px 20px;
+    font-size: 18px;
+}
+.printResume:hover{
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
+.editBtn{
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.editResume{
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+    padding: 5px 20px;
+    font-size: 18px;
+}
+.editResume:hover{
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
+.leftColor1{
+    background-color: #8d591a;
+}
+.leftColor2{
+    background-color: #219ca5;
+}
+.leftColor3{
+    background-color: #6d6d6d;
+}
+
+.chColor1{
+    color: #8d591a;
+}
+.chColor2{
+    color: #3e989e;
+}
+.chColor3{
+    color: #555555;
+}
