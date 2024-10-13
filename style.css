@@ -413,3 +413,10 @@ ul{
 .chColor3{
     color: #555555;
 }
+
+/* Hide the number input spinner for all browsers */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+}
