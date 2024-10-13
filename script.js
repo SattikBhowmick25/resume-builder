@@ -104,6 +104,9 @@ cropButton.addEventListener('click', function(event) {
     }
 });
 
+document.getElementById("grad-date").addEventListener("click", function () {
+    this.showPicker();  // Ensure calendar pops up on click
+});
 
 // Function to generate the resume
 function generateResume(event) {
@@ -142,13 +145,25 @@ function generateResume(event) {
     document.getElementById("Links").innerHTML = linkF;
 
     // Education
+
+    // Function to format the month-year input to "August 2032"
+    function formatMonthYear(dateValue) {
+        const [year, month] = dateValue.split('-');  // Split the value into year and month
+        const date = new Date(year, month - 1);  // Create a Date object (month is 0-indexed)
+        const options = { year: 'numeric', month: 'long' };  // Formatting options
+
+        return date.toLocaleDateString('en-US', options);  // Example: "August 2032"
+    }
+
     const inst = document.getElementById("institute").value;
     const deg = document.getElementById("degree").value;
     const fos = document.getElementById("fieldofstudy").value;
     const marks = document.getElementById("marks").value;
     const gradDate = document.getElementById("grad-date").value;
+
+    const formattedDate = formatMonthYear(gradDate);
     
-    let eduF = `<p>${deg}</p><p>${fos}</p><p>${inst}</p><p>${gradDate}</p><p>${marks}</p>`;
+    let eduF = `<p>${deg}</p><p>${fos}</p><p>${inst}</p><p>${formattedDate}</p><p>${marks}</p>`;
     document.getElementById("Edu").innerHTML = eduF;
 
     // Skills
