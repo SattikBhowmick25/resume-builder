@@ -237,17 +237,37 @@ const genBtn=document.querySelector(".generateBtn");
 genBtn.addEventListener("click", displayTemplate);
 
 
-//print resume
+// Print Resume
 function printResume() {
     inpCont.style.display = "none";
-    document.querySelector(".resume").style.display = "block";
-    document.querySelector(".left").style.display = "block";
-    document.getElementById("btnN").style.display = "none";
-    document.getElementById("btnE").style.display='none';
-    window.print();
+    const content = document.querySelector(".resume");
+    const btnN = document.getElementById("btnN");
+    const btnE = document.getElementById("btnE");
 
-    document.getElementById("btnN").style.display = "flex";
-    document.getElementById("btnE").style.display='flex';
+    btnN.style.display = "none";
+    btnE.style.display = "none";
+
+    content.style.display = "block";
+    document.querySelector(".left").style.display = "block";
+
+    html2pdf()
+        .from(content)
+        .set({
+            margin: 0.5, // Remove margins
+            filename: `resume_${Date.now()}.pdf`,
+            html2canvas: {
+                scale: 2,
+                scrollY: 0,
+                windowWidth: 208 * 3.7795275591, // A4 width
+                windowHeight: 295 * 3.7795275591, // A4 height
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        })
+        .save()
+        .then(() => {
+            btnN.style.display = "flex";
+            btnE.style.display = "flex";
+        });
 }
 
 const printBtn=document.querySelector(".printResume");
