@@ -74,29 +74,33 @@
                     
                     <div class="section edu">
                         <h3>EDUCATION</h3>
-                        <div class="edu-field">
-                            <div class="field">
-                                <b><p>INSTITUTE NAME</p></b>
-                                <input type="text" class="inp" id="institute" name="institute" placeholder="Enter Institute Name">
+                        <div id="education-container">
+                            <div class="edu-field">
+                                <div class="field">
+                                    <b><p>INSTITUTE NAME</p></b>
+                                    <input type="text" class="inp" id="institute" name="institute" placeholder="Enter Institute Name">
+                                </div>
+                                <div class="field">
+                                    <b><p>DEGREE</p></b>
+                                    <input type="text" class="inp" id="degree" name="degree" placeholder="Enter Degree">
+                                </div>
+                                <div class="field">
+                                    <b><p>FIELD OF STUDY</p></b>
+                                    <input type="text" class="inp" id="fieldofstudy" name="fieldofstudy" placeholder="Enter field of study">
+                                </div>
+                                <div class="field">
+                                    <b><p>CGPA (OR PERCENTAGE)</p></b>
+                                    <input type="number" class="inp" id="marks" name="marks" placeholder="Enter here">
+                                </div>
+                                <div class="field">
+                                    <b><p>GRADUATION DATE (OR EXPECTED GRADUATION DATE)</p></b>
+                                    <input type="month" class="inp" id="grad-date" name="grad-date" placeholder="Enter Month and Year">
+                                </div>
                             </div>
-                            <div class="field">
-                                <b><p>DEGREE</p></b>
-                                <input type="text" class="inp" id="degree" name="degree" placeholder="Enter Degree">
-                            </div>
-                            <div class="field">
-                                <b><p>FIELD OF STUDY</p></b>
-                                <input type="text" class="inp" id="fieldofstudy" name="filedofstudy" placeholder="Enter field of study">
-                            </div>
-                            <div class="field">
-                                <b><p>CGPA (OR PERCENTAGE)</p></b>
-                                <input type="number" class="inp" id="marks" name="marks" placeholder="Enter here">
-                            </div>
-                            <div class="field">
-                                <b><p>GRADUATION DATE (OR EXPECTED GRADUATION DATE)</p></b>
-                                <input type="month" class="inp" id="grad-date" name="grad-date" placeholder="Enter Month and Year">
-                            </div>                            
                         </div>
+                        <input type="button" id="eduBtn" class="addsection eduBtn" value="Add Education">
                     </div>
+                    
                     <div class="section prof">
                         <h3>PROFESSIONAL INFORMATION</h3>
                         <div class="field obj">

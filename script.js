@@ -9,6 +9,7 @@ const leftSide=document.querySelector(".left");
 const head1=document.getElementById("head1");
 const head2=document.getElementById("head2");
 const head3=document.getElementById("head3");
+const educationContainer = document.getElementById("education-container");
 
 tempSelect.style.display='none';
 resumeTemp.style.display='none';
@@ -36,6 +37,38 @@ function addLinkField() {
 }
 const linkBtn = document.querySelector(".linkBtn");
 linkBtn.addEventListener("click", addLinkField);
+
+// Function to add a new education field
+function addEducationField() {
+    const newEduField = document.createElement("div");
+    newEduField.classList.add("edu-field");
+    newEduField.innerHTML = `
+        <div class="field">
+            <b><p>INSTITUTE NAME</p></b>
+            <input type="text" class="inp" name="institute" placeholder="Enter Institute Name">
+        </div>
+        <div class="field">
+            <b><p>DEGREE</p></b>
+            <input type="text" class="inp" name="degree" placeholder="Enter Degree">
+        </div>
+        <div class="field">
+            <b><p>FIELD OF STUDY</p></b>
+            <input type="text" class="inp" name="fieldofstudy" placeholder="Enter Field of Study">
+        </div>
+        <div class="field">
+            <b><p>CGPA (OR PERCENTAGE)</p></b>
+            <input type="number" class="inp" name="marks" placeholder="Enter Here">
+        </div>
+        <div class="field">
+            <b><p>GRADUATION DATE</p></b>
+            <input type="month" class="inp" name="grad-date">
+        </div>
+    `;
+    educationContainer.appendChild(newEduField);
+}
+
+const eduBtn = document.querySelector(".eduBtn");
+eduBtn.addEventListener("click", addEducationField);
 
 // Function to add a new skill input field
 function addSkillField() {
@@ -104,9 +137,7 @@ cropButton.addEventListener('click', function(event) {
     }
 });
 
-document.getElementById("grad-date").addEventListener("click", function () {
-    this.showPicker();  // Ensure calendar pops up on click
-});
+
 
 // Function to generate the resume
 function generateResume(event) {
@@ -143,28 +174,42 @@ function generateResume(event) {
         }
     }
     document.getElementById("Links").innerHTML = linkF;
+// Helper function to format the graduation date
+function formatMonthYear(date) {
+    const [year, month] = date.split('-');
+    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return `${monthNames[parseInt(month) - 1]} ${year}`;
+}
 
-    // Education
+// Education: Loop through all education fields and generate the HTML content
+function generateEducationDetails() {
+    const eduFields = Array.from(document.getElementsByClassName("edu-field"));
+    let educationDetails = "";
 
-    // Function to format the month-year input to "August 2032"
-    function formatMonthYear(dateValue) {
-        const [year, month] = dateValue.split('-');  // Split the value into year and month
-        const date = new Date(year, month - 1);  // Create a Date object (month is 0-indexed)
-        const options = { year: 'numeric', month: 'long' };  // Formatting options
+    eduFields.forEach(field => {
+        const institute = field.querySelector('input[name="institute"]').value;
+        const degree = field.querySelector('input[name="degree"]').value;
+        const fieldOfStudy = field.querySelector('input[name="fieldofstudy"]').value;
+        const marks = field.querySelector('input[name="marks"]').value;
+        const gradDate = formatMonthYear(field.querySelector('input[name="grad-date"]').value);
 
-        return date.toLocaleDateString('en-US', options);  // Example: "August 2032"
-    }
+        educationDetails += `
+            <div class="edu-entry">
+                <p><b>${degree}</b> in ${fieldOfStudy}</p>
+                <p>${institute}</p>
+                <p>Graduated: ${gradDate}</p>
+                <p>Marks: ${marks}</p>
+                <br>
+            </div>
+        `;
+    });
 
-    const inst = document.getElementById("institute").value;
-    const deg = document.getElementById("degree").value;
-    const fos = document.getElementById("fieldofstudy").value;
-    const marks = document.getElementById("marks").value;
-    const gradDate = document.getElementById("grad-date").value;
+    document.getElementById("Edu").innerHTML = educationDetails;
+}
 
-    const formattedDate = formatMonthYear(gradDate);
-    
-    let eduF = `<p>${deg}</p><p>${fos}</p><p>${inst}</p><p>${formattedDate}</p><p>${marks}</p>`;
-    document.getElementById("Edu").innerHTML = eduF;
+// Call the function to generate education details
+generateEducationDetails();
+
 
     // Skills
     const skills = document.getElementsByClassName("skill-input");

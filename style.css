@@ -420,3 +420,17 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none; 
     margin: 0; 
 }
+
+.eduBtn{
+    width: 200px;
+    font-size: 18px;
+    border: 2px solid rgb(163, 130, 87);
+    background-color: rgb(241, 221, 195);
+    border-radius: 30px;
+    color: rgb(85, 54, 13);
+}
+.eduBtn :hover{
+    background-color: rgb(163, 130, 87);
+    color: rgb(241, 221, 195);
+    cursor: pointer;
+}
